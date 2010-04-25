@@ -1,4 +1,5 @@
-== Clojure 101 Course Material, Homework, Etc. ==
+Clojure 101 Course Material, Homework, Etc.
+===========================================
 
 RubyLearning offered a free Clojure course recently, and it was
 coincidental that I was starting to get interested in learning it, so I
