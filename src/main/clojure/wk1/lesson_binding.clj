@@ -1,3 +1,9 @@
+(ns wk1.lesson-binding
+  ;(:require )
+  ;(:use )
+  ;(:import )
+)
+
 (def v 1) ; v is a global binding
 
 (defn f1 []

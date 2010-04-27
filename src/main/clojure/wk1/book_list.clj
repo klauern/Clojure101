@@ -1,7 +1,7 @@
 (ns #^{:doc "The code for exercise 5 of week 1 of the RubyLearning.org 
             Clojure 101 course."
        :author "Daniel Solano Gómez"}
-  book-list)
+  wk1.book-list)
 
 (defstruct #^{:doc "Basic structure for book information."}
   book :title :authors :price)
@@ -59,10 +59,15 @@
 
 (defn print-book
   "Prints out information about a book."
-  [book]
-  (println "Title:" (book :title))
-  (println "  Author: " (comma-sep (book :authors)))
-  (println "  Price:" (money-str (book :price))))
+  [{:keys [title authors price] :as book}]
+  (println "Title:" title)
+	(let [[first second & more] authors]
+     (println "  Author:" (comma-sep
+                            (filter seq [first
+                                         second
+                                         (when more "et. al.")]))))
+   (println "  Price:" (money-str price))
+   (println "  Raw:" (pr-str book)))
 
 (comment
   (use 'book-list)
