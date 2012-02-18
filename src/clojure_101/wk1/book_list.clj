@@ -69,6 +69,15 @@
    (println "  Price:" (money-str price))
    (println "  Raw:" (pr-str book)))
 
+(defn print-books
+	"Print some books with a short summary of the book listing, including a count"
+	[& books]
+	(map print-book books)
+	(print "\n=============\n")
+	(println "Printed information on"
+					 (count books)
+	         ("books.")))
+
 (comment
   (use 'book-list)
   (map print-book best-sellers))
